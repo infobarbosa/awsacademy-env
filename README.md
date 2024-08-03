@@ -106,11 +106,14 @@ Output esperado:
 9. No menu lateral esquerdo clique em **Instances**.
 10. Na lista de instâncias clique no link do *Instance ID* da instância com status *Running*.<br>
 ![img/004-ec2-console-select-instance.png](img/004-ec2-console-select-instance.png)
-11. Clique no botão *Connect*<br>
+11. Clique no botão **Connect**<br>
 ![img/005-ec2-connect-button.png](img/005-ec2-connect-button.png)
-Será aberta a tela de conexão via *ssh*.
+
+Será apresentada a tela de conexão via *ssh*.
+
 ![img/006-ec2-connect-ssh-screen.png](img/006-ec2-connect-ssh-screen.png)
-12. Role a tela até o final e clique no botão **Connect**
+
+12. Role a tela até o final e clique no botão **Connect**<br>
 ![img/007-ec2-connect-button.png](img/007-ec2-connect-button.png)
 
 Será aberta uma nova aba com um terminal.
