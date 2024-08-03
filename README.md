@@ -19,16 +19,14 @@ Utilize o procedimento ao final desta página para eliminar os recursos criados.
 
 ## 1. Região AWS
 
-Verifique a região no topo à direita do console AWS, normalmente é **Norte da Virgínia**.<br>
+No console AWS verifique a região no topo à direita do console AWS, normalmente é **Norte da Virgínia** (`us-east-1`).<br>
 **Não** altere essa configuração!
 <div align="left">
 
-![img/001_regiao.png](img/001_regiao.png) 
-
 </div>
 
-### 2. CloudShell
-Selecione o ícone do serviço *CloudShell*.
+## 2. CloudShell
+Selecione o ícone do serviço *CloudShell*.<br>
 ![img/001-cloudshell-icon.png](img/001-cloudshell-icon.png)
 
 Será disponibilizada o terminal do CloudShell:
