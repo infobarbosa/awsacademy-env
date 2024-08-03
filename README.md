@@ -32,7 +32,7 @@ Utilize o procedimento ao final desta página para eliminar os recursos criados.
 Será disponibilizada o terminal do CloudShell:
 ![img/002-cloudshell-terminal.png](img/002-cloudshell-terminal.png)
 
-### Clonagem do repositório
+## Clonagem do repositório
 3. Execute a seguinte instrução para clonar este repositório:
 ```
 git clone https://github.com/infobarbosa/awsacademy-env.git
@@ -55,7 +55,7 @@ Receiving objects: 100% (6/6), done.
 cd awsacademy-env/
 ```
 
-### CloudFormation - Criação do stack
+## CloudFormation - Criação do stack
 Para criação da instância, vamos utilizar o script cloudformation `template.yaml` disponibilizado no repositório.<br>
 
 5. A criação deve ser feita através do comando a seguir:
@@ -71,7 +71,7 @@ Output esperado:
 }
 ```
 
-### CloudFormation - Conferindo o stack
+## CloudFormation - Conferindo o stack
 
 6. Verifique o status de criação através do seguinte comando:
 ```
