@@ -71,6 +71,13 @@ Output esperado:
 }
 ```
 
+**OPCIONAL**<br>
+Caso orientado pelo instrutor, alguns parâmetros podem ser alterados. Um exemplo:
+```
+aws cloudformation create-stack --stack-name lab-stack --template-body file://template.yaml --parameters ParameterKey=AZ,ParameterValue="us-east-1f"
+```
+
+
 ## CloudFormation - Conferindo o stack
 
 6. Verifique o status de criação através do seguinte comando:
