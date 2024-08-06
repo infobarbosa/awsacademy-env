@@ -1,4 +1,41 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Este template CloudFormation cria uma infraestrutura básica na AWS, incluindo:
+  - Uma VPC (Virtual Private Cloud) com suporte a DNS e nomes de host habilitados.
+  - Uma Subnet pública dentro da VPC, localizada na zona de disponibilidade us-east-1a.
+  - Um Internet Gateway para permitir a comunicação da VPC com a internet.
+Parameters:
+  KeyName:
+    Description: Nome da chave SSH para acessar a instância EC2
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstraintDescription: Deve ser o nome de uma chave SSH válida existente na sua conta da AWS.
+    Default: vockey
+  AZ:
+    Description: Zona de disponibilidade para a Subnet
+    Type: AWS::EC2::AvailabilityZone::Name
+    Default: us-east-1a
+    AllowedValues:
+      - us-east-1a
+      - us-east-1b
+      - us-east-1c
+      - us-east-1d
+      - us-east-1e
+  AMI:
+    Description: ID da imagem da instância EC2
+    Type: AWS::EC2::Image::Id
+    Default: ami-068d56f572720958c
+  InstanceType:
+    Description: Tipo de instância EC2
+    Type: String
+    Default: t3.large
+    AllowedValues:
+      - t2.medium
+      - t3.medium
+      - t3.large
+      - c4.large
+      - c5.large
+      - m4.large
+      - m5.large
 Resources:
   MyVPC:
     Type: 'AWS::EC2::VPC'
@@ -15,7 +52,7 @@ Resources:
     Properties:
       VpcId: !Ref MyVPC
       CidrBlock: '10.0.1.0/24'
-      AvailabilityZone: us-east-1a
+      AvailabilityZone: !Ref AZ
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -80,10 +117,10 @@ Resources:
   MyEC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      InstanceType: t3.large
-      ImageId: ami-068d56f572720958c
-      AvailabilityZone: us-east-1a
-      KeyName: vockey
+      InstanceType: !Ref InstanceType
+      ImageId:  !Ref AMI
+      AvailabilityZone: !Ref AZ
+      KeyName: !Ref KeyName
       NetworkInterfaces:
         - AssociatePublicIpAddress: true
           DeviceIndex: '0'
