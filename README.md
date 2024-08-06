@@ -60,14 +60,14 @@ Para criação da instância, vamos utilizar o script cloudformation `template.y
 
 5. A criação deve ser feita através do comando a seguir:
 ```
-aws cloudformation create-stack --stack-name infobarbosa-stack --template-body file://template.yaml
+aws cloudformation create-stack --stack-name lab-stack --template-body file://template.yaml
 ```
 
 Output esperado:
 ```
-[cloudshell-user@ip-10-138-189-141 awsacademy-env]$ aws cloudformation create-stack --stack-name infobarbosa-stack --template-body file://template.yaml
+[cloudshell-user@ip-10-138-189-141 awsacademy-env]$ aws cloudformation create-stack --stack-name lab-stack --template-body file://template.yaml
 {
-    "StackId": "arn:aws:cloudformation:us-east-1:898985761452:stack/infobarbosa-stack/24d09450-51e3-11ef-a1f3-0affc644647b"
+    "StackId": "arn:aws:cloudformation:us-east-1:898985761452:stack/lab-stack/24d09450-51e3-11ef-a1f3-0affc644647b"
 }
 ```
 
@@ -75,20 +75,20 @@ Output esperado:
 
 6. Verifique o status de criação através do seguinte comando:
 ```
-aws cloudformation describe-stack-events --stack-name infobarbosa-stack
+aws cloudformation describe-stack-events --stack-name lab-stack
 ```
 
 Output esperado:
 ```
-[cloudshell-user@ip-10-138-189-141 awsacademy-env]$ aws cloudformation describe-stack-events --stack-name infobarbosa-stack  
+[cloudshell-user@ip-10-138-189-141 awsacademy-env]$ aws cloudformation describe-stack-events --stack-name lab-stack  
 {
     "StackEvents": [
         {
-            "StackId": "arn:aws:cloudformation:us-east-1:898985761452:stack/infobarbosa-stack/24d09450-51e3-11ef-a1f3-0affc644647b",
+            "StackId": "arn:aws:cloudformation:us-east-1:898985761452:stack/lab-stack/24d09450-51e3-11ef-a1f3-0affc644647b",
             "EventId": "392903b0-51e3-11ef-a6ba-0affd5ec2d63",
-            "StackName": "infobarbosa-stack",
-            "LogicalResourceId": "infobarbosa-stack",
-            "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:898985761452:stack/infobarbosa-stack/24d09450-51e3-11ef-a1f3-0affc644647b",
+            "StackName": "lab-stack",
+            "LogicalResourceId": "lab-stack",
+            "PhysicalResourceId": "arn:aws:cloudformation:us-east-1:898985761452:stack/lab-stack/24d09450-51e3-11ef-a1f3-0affc644647b",
             "ResourceType": "AWS::CloudFormation::Stack",
             "Timestamp": "2024-08-03T21:56:23.004000+00:00",
             "ResourceStatus": "CREATE_COMPLETE"
@@ -128,23 +128,23 @@ Agora é possível prosseguir para as próximas etapas do seu treinamento.
 # CloudFormation - Destruindo o stack
 Após a finalização do laboratório, você deve eliminar os componentes através do comando:
 ```
-aws cloudformation delete-stack --stack-name infobarbosa-stack
+aws cloudformation delete-stack --stack-name lab-stack
 ```
 
 Este comando não produz uma saída. Porém, é possível conferir através do `describe-stack-events` novamente:
 ```
-aws cloudformation describe-stack-events --stack-name infobarbosa-stack 
+aws cloudformation describe-stack-events --stack-name lab-stack 
 ```
 
 Output esperado:
 ```
-[cloudshell-user@ip-10-138-189-141 awsacademy-env]$ aws cloudformation describe-stack-events --stack-name infobarbosa-stack  
+[cloudshell-user@ip-10-138-189-141 awsacademy-env]$ aws cloudformation describe-stack-events --stack-name lab-stack  
 {
     "StackEvents": [
         {
-            "StackId": "arn:aws:cloudformation:us-east-1:898985761452:stack/infobarbosa-stack/7359cb80-51e5-11ef-9996-0e7eadbf076b",
+            "StackId": "arn:aws:cloudformation:us-east-1:898985761452:stack/lab-stack/7359cb80-51e5-11ef-9996-0e7eadbf076b",
             "EventId": "MyRoute-DELETE_COMPLETE-2024-08-03T22:59:47.828Z",
-            "StackName": "infobarbosa-stack",
+            "StackName": "lab-stack",
             "LogicalResourceId": "MyRoute",
             "PhysicalResourceId": "rtb-0b3256cbc6841e285|0.0.0.0/0",
             "ResourceType": "AWS::EC2::Route",
