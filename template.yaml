@@ -20,6 +20,7 @@ Parameters:
       - us-east-1c
       - us-east-1d
       - us-east-1e
+      - us-east-1f
   AMI:
     Description: ID da imagem da instância EC2
     Type: AWS::EC2::Image::Id
